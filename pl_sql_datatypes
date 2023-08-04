@@ -1,0 +1,142 @@
+**Quiz Questions:**
+
+1. Scalar Data Types:
+a) What is the purpose of the NUMBER data type in PL/SQL?
+    a. To store large text data.
+    b. To store binary data.
+    c. To store numeric values.
+    d. To store date and time information.
+answer is c
+
+2. Composite Data Types:
+a) What does the VARRAY data type represent in PL/SQL?
+    a. A variable-size array.
+    b. A fixed-size array.
+    c. A reference to a cursor.
+    d. A collection of LOB types.
+
+answer is a
+
+3. Reference Data Types:
+a) What is the purpose of the REF CURSOR data type in PL/SQL?
+    a. To store binary data.
+    b. To create references to objects in the database.
+    c. To return query results from procedures and functions.
+    d. To store character data.
+
+answer is c
+
+4. LOB Data Types:
+a) Which data type is suitable for storing large amounts of character data in PL/SQL?
+    a. CLOB
+    b. BLOB
+    c. NCLOB
+    d. VARCHAR2
+
+answer is a
+
+5. Collection Data Types:
+a) Which collection data type allows you to access elements using a unique key in PL/SQL?
+    a. Nested Table
+    b. VARRAY
+    c. Associative Array (PL/SQL Table)
+    d. REF CURSOR
+
+answer is c
+
+6. Scalar Data Types:
+a) Which data type is used to store character data with a fixed length in PL/SQL?
+    a. VARCHAR2
+    b. CHAR
+    c. BOOLEAN
+    d. DATE
+
+answer is b
+
+7. Composite Data Types:
+a) What is the purpose of the RECORD data type in PL/SQL?
+    a. To store multiple rows of data.
+    b. To create user-defined functions.
+    c. To define custom data structures.
+    d. To perform date and time arithmetic.
+
+answer is c
+
+8. Reference Data Types:
+a) How does the REF data type in PL/SQL differ from a REF CURSOR?
+    a. REF CURSOR is used for dynamic queries, while REF is used for referencing objects.
+    b. REF is used for dynamic queries, while REF CURSOR is used for referencing objects.
+    c. They are the same and can be used interchangeably.
+    d. Both are used for referencing objects.
+
+answer is a
+
+9. LOB Data Types:
+a) What is the purpose of the BFILE data type in PL/SQL?
+    a. To store large text data.
+    b. To store binary data.
+    c. To store references to external binary files.
+    d. To store large amounts of character data.
+
+answer is c
+
+10. Collection Data Types:
+a) What happens if you try to access an element beyond the bounds of a VARRAY in PL/SQL?
+    a. It raises an exception.
+    b. It automatically extends the VARRAY to accommodate the new element.
+    c. It discards the existing elements to make room for the new element.
+    d. It returns NULL for the out-of-bounds element.
+
+answer is a
+
+
+
+Scalar Data Types:
+Open Format: Explain the purpose of the BOOLEAN data type in PL/SQL and provide a practical example of how it can be used in a conditional statement.
+
+Boolean özündə 2 dəyər saxlayır. True və ya False. Əgər verdiyimiz şərtlər ödənirsə true, əks halda false cavabını alırıq.
+
+set serveroutput on
+declare
+    v_number1 number := 12;
+    v_number2 number := 5;
+    v_result boolean;
+begin    
+    if v_number1 > v_number2 then
+    v_result :=true;
+
+    else
+    v_result:=false;
+
+    end if;
+end;
+
+2.Composite Data Types:
+Open Format: Create a Nested Table in PL/SQL named employee_skills to store the skills of five employees. Populate the Nested Table with employee names and their respective skills. Display the contents of the Nested Table.
+---
+
+3.Reference Data Types:
+Open Format: Describe the differences between the REF CURSOR and the REF data types in PL/SQL and provide specific use cases where each type would be more suitable.
+
+REF KURSOR məlumat növü sizə kursora istinad yaratmağa imkan verir. O, adətən PL/SQL-də saxlanılan prosedur və ya funksiyalardan sorğu nəticələrini qaytarmaq üçün istifadə olunur. REF KURSOR dinamik şəkildə qurulmuş SQL sorğusunun nəticə dəstini saxlaya bilər
+
+REF məlumat növü verilənlər bazasında obyektlərə və ya sıralara istinadlar yaratmaq üçün istifadə olunur. O, mövcud obyektlərə göstəricilər yaratmağa və onlardan PL/SQL kodu daxilində istifadə etməyə imkan verir.
+
+4.LOB Data Types:
+Open Format: Explain the purpose of the CLOB data type in PL/SQL and provide a real-world use case where it would be beneficial.
+
+BLOB məlumat növü şəkillər, audio, video və ya digər ikili məlumatları saxlamaq üçün istifadə olunur.
+CLOB məlumat növü mətn sənədləri, XML məlumatları və ya digər mətn məlumatları kimi böyük həcmli xarakter məlumatlarını saxlamaq üçün istifadə olunur.
+NCLOB məlumat növü CLOB-a bənzəyir, lakin o, böyük miqdarda milli xarakter dəsti məlumatlarını saxlamaq üçün istifadə olunur. Milli xarakter dəstlərinə konkret ölkə və ya regiona xas simvollar daxildir.
+
+Bu tiplərdən istifadə edərək böyük həcmli məlumatların məlumatların təhlükəsiz formada saxlanması, axtarışı, onlara nəzarət,datada yenilənmə baş verərkən dəyişiklik tarixinin saxlanılması və s həyata keçirilir.
+
+
+5.Collection Data Types:
+Open Format: Compare and contrast VARRAY, Nested Table, and Associative Array (PL/SQL Table) in terms of their usage, limitations, and scenarios where each would be more appropriate.
+
+Varray sabit ölçülü massivdir, onun olçüsü sonradan dəyiçə bilməz.Varraylar-lar ümumiyyətlə kiçik kolleksiyalar üçün daha səmərəlidir, lakin onların sabit ölçüsünə görə daha böyük kolleksiyalar üçün performans məhdudiyyətləri ola bilər.
+
+Nested table eyni məlumat tipində ixtiyari sayda elementləri saxlaya bilən dinamik massivdir. dinamik xarakterinə görə kiçik kolleksiyalar üçün VARRAY-larla müqayisədə bir qədər yavaş performans göstərə bilər və dinamik ölçülərini dəyişmək imkanlarına görə VARRAY-lərlə müqayisədə daha çox yaddaş yeri sərf edə bilər.
+
+ Assosiativ massivlər PL/SQL-də məlumatları açar-dəyər cütləri kimi saxlayan kolleksiyalardır və açarlar əsasında səmərəli məlumat axtarışına imkan verir. Onlar PL/SQL bloku daxilində axtarışlar, məlumatların müvəqqəti saxlanması, qruplaşdırılması və indeksləşdirilməsi üçün faydalıdır.Assosiativ massiv daxili cədvəllərdə və VARRAY-larda olduğu kimi ardıcıl tam ədədlərlə deyil, unikal açarla indeksləşdirilmiş elementlər toplusudur. 
